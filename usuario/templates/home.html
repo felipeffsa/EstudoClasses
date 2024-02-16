@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <h1>Lista de pessoas</h1>
-    <ul>
+    <div class ='container'>
+    <h1 class ='border-bottom border-dark'>Lista de pessoas</h1>
+   <table class ='table table-dark w-50'>
+    <tr>
+    <th>Nome</th>
+    <th> </th>
+   
+    </tr>
     {% for pessoa in pessoas %}
-    <li><a href ='{% url "detail" pessoa.pk %}'>{{pessoa.nome}}</a></li>
+    <tr>
+        <td class ='border-bottom border-white'>{{pessoa.nome}}</td>
+        <td class ='border-bottom border-white'><a href="{% url "detail" pessoa.pk %}" class ='btn btn-primary mx-4'>Detalhes</a><a href="{% url "atualizar" pessoa.pk %}" class ='btn btn-warning mx-4'>Atualizar</a><a href="{% url "deletar" pessoa.pk %}" class ='btn btn-danger mx-4'>Deletar</a></td>
+       
+    </tr>
     {% endfor %}
-    </ul>
+   
+   
+   
+    <h3><a href ='{% url "criar" %}'>Clique aqui para criar um novo cadastro</a></h3>
+</div>
 </body>
 </html>

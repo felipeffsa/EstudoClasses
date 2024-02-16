@@ -6,11 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-    <li>Nome: {{detail.nome}}</li>
-    <li>Idade: {{detail.idade}}</li>
-    <li>Nacionalidade: {{detail.nacionalidade}}</li> 
-    <li>Profissão: {{detail.profissao.nome}}</li>
-    </ul>
+    <h1>Criar cadastro</h1>
+    <form action="." method ='POST'>
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <button type = 'submit'>Enviar</button>
+    </form>
 </body>
 </html>

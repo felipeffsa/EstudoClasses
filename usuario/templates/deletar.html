@@ -6,11 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-    <li>Nome: {{detail.nome}}</li>
-    <li>Idade: {{detail.idade}}</li>
-    <li>Nacionalidade: {{detail.nacionalidade}}</li> 
-    <li>Profissão: {{detail.profissao.nome}}</li>
-    </ul>
+    <form action="." method ='POST'>
+        {% csrf_token %}
+        <span>Deseja deletar todos os dados de {{nome_do_usuario}} ?</span>
+        <button type ='submit'>Sim</button>
+    </form>
 </body>
 </html>
